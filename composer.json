@@ -1,0 +1,21 @@
+{
+    "name": "xsme/php-api-metroport-sms",
+    "description": "SMS API służy do wysyłania, sprawdzania statusu smsów, bilansu konta",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "xsme\\Metroport\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sebastian Rzeszutek",
+            "email": "sebastian.rzeszutek@icloud.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.2.12"
+    }
+}
