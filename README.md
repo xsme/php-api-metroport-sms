@@ -21,9 +21,6 @@ Spis wszystkich funkcji z opisem i odpowiedzią zwrotną.
 // $password - uzyskujemy z Metroport
 $sms = new SMSApi($location, $username, $password)
 
-// Pobieranie ustawień ISP z systemu Hibox.
-$test = $hibox->getSystemSettings();
-
 // Wysylanie wiadomosci SMS
 $test = $sms->postSms('48500600700', "testowa wiadomosc", '48500600700');
 
