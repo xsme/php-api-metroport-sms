@@ -211,4 +211,29 @@ class SMSApi
     {
         return $this->makeRequest("sms/Tariff/accounttariffs", "GET");
     }
+
+    /**
+     * Pobieranie historii odebranych wiadomości
+     * 
+     * @param string $msisdn numer telefonu dla ktorego chcemy pobrac historie
+     * @return array
+     *  [code]     => int
+     *  [response] => array
+     */
+    public function getReceived($msisdn = null)
+    {   
+        $parameters = [
+            'status' => 'received',
+        ];
+
+        if ($msisdn) {
+            $parameters['msisdn'] = $msisdn;
+        } else {
+            throw new \Exception("Brak podanego numeru telefonu jako parametr");
+        }
+
+        $endpoint = static::makeEndpoint("sms/History", $parameters);
+
+        return $this->makeRequest($endpoint, "GET");
+    }
 }
